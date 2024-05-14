@@ -2,17 +2,17 @@
   <div class="my-16 mx-64">
     <DescriptionNode :description="description" />
 
-    <div class="text-2xl text-center font-semibold">Select the three best options</div>
+    <div class="text-2xl text-center font-semibold">You can select upto 3 options</div>
 
     <div class="grid grid-cols-3 my-2 gap-x-8 text-lg">
       <div
         v-for="(option, index) in options"
         :key="index"
-        class="my-4 text-center border-2 border-black"
+        class="my-4 flex flex-col justify-between text-center border-2 border-black"
         :class="{ 'bg-slate-400': selectedOptions.includes(index) }"
       >
         <p class="my-2 px-2">{{ option }}</p>
-        <button @click="toggleOption(index)" class="mb-2 py-2 px-4 bg-black rounded-md text-white">
+        <button @click="toggleOption(index)" class="my-2 py-2 mx-4 bg-black rounded-md text-white">
           {{ selectedOptions.includes(index) ? 'Deselect' : 'Select' }}
         </button>
       </div>
