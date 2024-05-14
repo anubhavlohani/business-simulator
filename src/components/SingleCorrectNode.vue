@@ -6,10 +6,10 @@
       <div
         v-for="(option, index) in options"
         :key="index"
-        class="basis-1/3 my-4 text-center border-2 border-black"
+        class="basis-1/3 my-4 flex flex-col justify-between text-center border-2 border-black"
       >
         <p class="my-2 px-2">{{ option }}</p>
-        <button @click="selectOption(index)" class="mb-2 py-2 px-4 bg-black rounded-md text-white">
+        <button @click="selectOption(index)" class="my-2 py-2 mx-4 bg-black rounded-md text-white">
           Select
         </button>
       </div>

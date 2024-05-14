@@ -170,8 +170,13 @@ const handleRankingSubmission = (optionRankings) => {
 const cases = [
   {
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elit neque, cursus at pulvinar id, porta ac augue. Donec vitae egestas sem. Duis nec fringilla risus. Sed condimentum risus sed nisl vulputate, vitae facilisis metus efficitur. Integer eleifend malesuada magna, vel ultricies mauris lobortis ut. Integer sed justo id magna gravida commodo. Maecenas finibus elementum ex, sed pellentesque diam ullamcorper ut. Ut sed accumsan sapien, eget laoreet orci. Integer ipsum urna, pulvinar et nibh non, imperdiet suscipit arcu. Maecenas eget vulputate est. Maecenas congue sagittis ex et euismod. Donec quis eros imperdiet ligula mattis ullamcorper. Proin tristique odio quis nisi scelerisque volutpat. Curabitur porttitor egestas pharetra. Phasellus a pharetra lorem. Aenean malesuada tempus metus, sit amet feugiat arcu lacinia quis. Donec convallis lorem vitae ex vestibulum gravida. Quisque sollicitudin massa purus. Nullam congue, felis sit amet bibendum gravida, lorem nunc fringilla urna, sit amet ultricies odio nunc at tortor. Etiam commodo fringilla elit, nec ultricies nibh condimentum vel. Duis pharetra ipsum ac massa varius, et semper ex gravida. Suspendisse potenti. Vivamus cursus eleifend erat, in commodo sapien mollis eget. Nam id mattis arcu. Curabitur volutpat quam ut tempor ullamcorper. Nullam felis lorem, molestie ac mauris maximus, porttitor finibus diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur pulvinar eleifend dolor ut sodales. Nulla tincidunt purus diam, nec vestibulum dui dignissim vel. Etiam rhoncus lacus ac sem feugiat semper. Donec eu urna in velit facilisis lacinia. Suspendisse pharetra faucibus suscipit. Ut fringilla dui in sapien ultrices dapibus sed eget quam. Aenean neque turpis, hendrerit vitae aliquet sed, cursus vitae odio. Duis sed sollicitudin dolor. Etiam ullamcorper odio vitae posuere tempus. Nulla auctor blandit ultricies.',
-    options: ['Best Option', 'Decent Option', 'Bad Option 1', 'Bad Option 2']
+      'A major misconduct has occurred in your area. You identify that the person involved in the activity is one of the veterans of the factory, with a clean track record of over 28 yrs. Ramlal holds real sway with the workers. What is the first step you will take?',
+    options: [
+      'Write incident report',
+      'Counsel the offendor in presence of HOD',
+      'Talk to the offendor and aggrieved party to reach a settlement',
+      'Ignore the issue as this is the first time the person has done something wrong'
+    ]
   },
   {
     description:
