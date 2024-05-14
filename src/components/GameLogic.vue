@@ -67,16 +67,16 @@ const handleOptionSelection = (optionIndex) => {
   if (optionIndex == 0) {
     store.increaseProfit(2000)
     store.increaseRevenue(10000)
-    store.increaseInvestorOpinion(10)
+    store.increaseEmpEngagement(10)
     store.increaseEmployees(150)
     store.incrementLives()
   } else if (optionIndex == 1) {
     store.increaseProfit(1000)
     store.increaseRevenue(5000)
-    store.increaseInvestorOpinion(5)
+    store.increaseEmpEngagement(5)
     store.increaseEmployees(150)
   } else {
-    store.decreaseInvestorOpinion(20)
+    store.decreaseEmpEngagement(20)
     store.decrementLives()
   }
 
@@ -109,16 +109,16 @@ const handleMultiOptionSelection = (selectedOptions) => {
   if (optionScore == 2) {
     store.increaseProfit(3000)
     store.increaseRevenue(15000)
-    store.increaseInvestorOpinion(15)
+    store.increaseEmpEngagement(15)
     store.increaseEmployees(150)
     store.incrementLives()
   } else if (optionScore == 1) {
     store.increaseProfit(2000)
     store.increaseRevenue(10000)
-    store.increaseInvestorOpinion(10)
+    store.increaseEmpEngagement(10)
     store.increaseEmployees(150)
   } else {
-    store.decreaseInvestorOpinion(20)
+    store.decreaseEmpEngagement(20)
     store.decrementLives()
   }
 
@@ -154,16 +154,16 @@ const handleRankingSubmission = (optionRankings) => {
   if (correct == 3) {
     store.increaseProfit(2000)
     store.increaseRevenue(10000)
-    store.increaseInvestorOpinion(10)
+    store.increaseEmpEngagement(10)
     store.increaseEmployees(150)
     store.incrementLives()
   } else if (correct == 2) {
     store.increaseProfit(1000)
     store.increaseRevenue(5000)
-    store.increaseInvestorOpinion(5)
+    store.increaseEmpEngagement(5)
     store.increaseEmployees(150)
   } else if (correct == 0) {
-    store.decreaseInvestorOpinion(20)
+    store.decreaseEmpEngagement(20)
     store.decrementLives()
   }
 

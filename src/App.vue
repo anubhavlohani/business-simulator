@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="flex flex-row ml-8 mt-8">
-      <GameValues class="basis-1/6" />
-      <GameLogic class="basis-5/6" />
+      <GameValues class="basis-1/5" />
+      <GameLogic class="basis-4/5" />
     </div>
   </div>
 </template>

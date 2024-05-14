@@ -22,12 +22,12 @@ export const store = reactive({
   decreaseEmployees(val) {
     this.employees -= val
   },
-  investorOpinion: 50,
-  increaseInvestorOpinion(val) {
-    this.investorOpinion += val
+  empEngagement: 50,
+  increaseEmpEngagement(val) {
+    this.empEngagement += val
   },
-  decreaseInvestorOpinion(val) {
-    this.investorOpinion -= val
+  decreaseEmpEngagement(val) {
+    this.empEngagement -= val
   },
   lives: 0,
   incrementLives() {
