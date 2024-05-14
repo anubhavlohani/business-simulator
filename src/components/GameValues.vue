@@ -6,7 +6,7 @@
         <li>Profit: ₹{{ store.profit }}</li>
         <li>Employees: {{ store.employees }}</li>
         <li>Employee Engagement: {{ store.empEngagement }}%</li>
-        <li class="flex flex-row">
+        <li v-if="store.lives >= 0" class="flex flex-row">
           Lives:
           <div v-for="life in store.lives" :key="life">❤</div>
         </li>

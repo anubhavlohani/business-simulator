@@ -19,13 +19,13 @@
       <!-- All charts -->
       <div class="flex flex-row flex-wrap items-center gap-y-8 p-8">
         <div class="size-1/2">
+          <LineChart />
+        </div>
+        <div class="size-1/2">
           <BarChart />
         </div>
         <div class="size-1/2">
           <DoughnutChart />
-        </div>
-        <div class="size-1/2">
-          <RadarChart />
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
 <script setup>
 import BarChart from './BarChart.vue'
 import DoughnutChart from './DoughnutChart.vue'
-import RadarChart from './RadarChart.vue'
+import LineChart from './LineChart.vue'
 
 const emit = defineEmits(['toggleShowData'])
 const closeDataPanel = () => emit('toggleShowData')

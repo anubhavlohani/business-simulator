@@ -6,7 +6,7 @@
       <p class="text-center">{{ selectedOption }}</p>
     </div>
 
-    <p class="my-2 text-lg text-center">Time Elapsed: 5 years</p>
+    <p class="my-2 text-lg text-center">Time Elapsed: 1 month</p>
   </div>
 </template>
 

@@ -4,7 +4,7 @@
     <DataPanel v-if="showData" @toggleShowData="showData = false" />
 
     <SingleCorrectNode
-      v-if="count == 0"
+      v-if="count == 0 && !endSim"
       :description="cases[0].description"
       :options="cases[0].options"
       @handleOptionSelection="handleOptionSelection"
@@ -16,7 +16,7 @@
     />
 
     <MultipleCorrectNode
-      v-if="count == 1"
+      v-if="count == 1 && !endSim"
       :description="cases[1].description"
       :options="cases[1].options"
       @handleMultiOptionSelection="handleMultiOptionSelection"
@@ -28,7 +28,7 @@
     />
 
     <RankingNode
-      v-if="count == 2"
+      v-if="count == 2 && !endSim"
       :description="cases[2].description"
       :options="cases[2].options"
       @handleRankingSubmission="handleRankingSubmission"
@@ -39,7 +39,7 @@
       :selectedOptions="closedCases[2].selectedOptions"
     />
 
-    <EndingNode v-if="count == 3" :description="'THE END'" />
+    <EndingNode v-if="endSim" :description="'THE END'" />
   </div>
 </template>
 
@@ -59,10 +59,9 @@ import { store } from '@/assets/store'
 const showData = ref(false)
 const count = ref(0)
 const closedCases = ref([])
+const endSim = ref(false)
 
 const handleOptionSelection = (optionIndex) => {
-  showData.value = true
-
   // logic: best option gives ++ to profit and rev & +life; 2nd best gives: +, remaining two -life
   if (optionIndex == 0) {
     store.increaseProfit(2000)
@@ -70,26 +69,32 @@ const handleOptionSelection = (optionIndex) => {
     store.increaseEmpEngagement(10)
     store.increaseEmployees(150)
     store.incrementLives()
+    store.increaseFtr(5)
   } else if (optionIndex == 1) {
     store.increaseProfit(1000)
     store.increaseRevenue(5000)
     store.increaseEmpEngagement(5)
     store.increaseEmployees(150)
+    store.increaseFtr(3)
   } else {
     store.decreaseEmpEngagement(20)
     store.decrementLives()
+    store.decrementFtr(8)
   }
 
+  store.pushToFtrLabels('Feb')
   closedCases.value.push({
     description: cases[count.value].description,
     selectedOption: cases[count.value].options[optionIndex]
   })
   count.value++
+  showData.value = true
+  if (store.lives < 0) {
+    endSim.value = true
+  }
 }
 
 const handleMultiOptionSelection = (selectedOptions) => {
-  showData.value = true
-
   // selectedOptions represents index of options, not the text
 
   const bestOptionIndices = [0, 4]
@@ -112,16 +117,20 @@ const handleMultiOptionSelection = (selectedOptions) => {
     store.increaseEmpEngagement(15)
     store.increaseEmployees(150)
     store.incrementLives()
+    store.increaseFtr(5)
   } else if (optionScore == 1) {
     store.increaseProfit(2000)
     store.increaseRevenue(10000)
     store.increaseEmpEngagement(10)
     store.increaseEmployees(150)
+    store.increaseFtr(3)
   } else {
     store.decreaseEmpEngagement(20)
     store.decrementLives()
+    store.decrementFtr(8)
   }
 
+  store.pushToFtrLabels('Mar')
   let options = []
   for (let i = 0; i < selectedOptions.length; i++) {
     const option = cases[count.value].options[selectedOptions[i]]
@@ -132,11 +141,13 @@ const handleMultiOptionSelection = (selectedOptions) => {
     selectedOptions: options
   })
   count.value++
+  showData.value = true
+  if (store.lives < 0) {
+    endSim.value = true
+  }
 }
 
 const handleRankingSubmission = (optionRankings) => {
-  showData.value = true
-
   //optionRankings is an array that contains options texts in the ranked order
 
   const correctRanking = [1, 2, 0] // option indices
@@ -157,21 +168,27 @@ const handleRankingSubmission = (optionRankings) => {
     store.increaseEmpEngagement(10)
     store.increaseEmployees(150)
     store.incrementLives()
+    store.increaseFtr(5)
   } else if (correct == 2) {
     store.increaseProfit(1000)
     store.increaseRevenue(5000)
     store.increaseEmpEngagement(5)
     store.increaseEmployees(150)
+    store.increaseFtr(3)
   } else if (correct == 0) {
     store.decreaseEmpEngagement(20)
     store.decrementLives()
+    store.decreaseFtr(8)
   }
 
+  store.pushToFtrLabels('Apr')
   closedCases.value.push({
     description: cases[count.value].description,
     selectedOptions: optionRankings
   })
   count.value++
+  showData.value = true
+  endSim.value = true
 }
 
 const cases = [

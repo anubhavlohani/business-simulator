@@ -25,9 +25,11 @@ export const store = reactive({
   empEngagement: 50,
   increaseEmpEngagement(val) {
     this.empEngagement += val
+    this.empEngagement = this.empEngagement > 100 ? 100 : this.empEngagement // cap at 100
   },
   decreaseEmpEngagement(val) {
     this.empEngagement -= val
+    this.empEngagement = this.empEngagement < 0 ? 0 : this.empEngagement // min 0 allowed
   },
   lives: 0,
   incrementLives() {
@@ -35,5 +37,16 @@ export const store = reactive({
   },
   decrementLives() {
     this.lives--
+  },
+  ftrData: [85],
+  ftrLabels: ['Jan'],
+  increaseFtr(val) {
+    this.ftrData.push(this.ftrData[this.ftrData.length - 1] + val)
+  },
+  decrementFtr(val) {
+    this.ftrData.push(this.ftrData[this.ftrData.length - 1] - val)
+  },
+  pushToFtrLabels(val) {
+    this.ftrLabels.push(val)
   }
 })
