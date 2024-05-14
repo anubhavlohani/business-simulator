@@ -29,7 +29,7 @@ export const store = reactive({
   decreaseInvestorOpinion(val) {
     this.investorOpinion -= val
   },
-  lives: 3,
+  lives: 0,
   incrementLives() {
     this.lives++
   },

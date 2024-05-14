@@ -7,6 +7,7 @@
         <li>Investor Opinion: {{ store.investorOpinion }}%</li>
         <li>Employees: {{ store.employees }}</li>
         <li class="flex flex-row">
+          Lives:
           <div v-for="life in store.lives" :key="life">❤</div>
         </li>
       </ul>

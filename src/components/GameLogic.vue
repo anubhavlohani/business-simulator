@@ -69,6 +69,7 @@ const handleOptionSelection = (optionIndex) => {
     store.increaseRevenue(10000)
     store.increaseInvestorOpinion(10)
     store.increaseEmployees(150)
+    store.incrementLives()
   } else if (optionIndex == 1) {
     store.increaseProfit(1000)
     store.increaseRevenue(5000)
@@ -107,6 +108,7 @@ const handleMultiOptionSelection = (selectedOptions) => {
     store.increaseRevenue(15000)
     store.increaseInvestorOpinion(15)
     store.increaseEmployees(150)
+    store.incrementLives()
   } else if (bestOptionsSelected == 2) {
     store.increaseProfit(2000)
     store.increaseRevenue(10000)
@@ -156,6 +158,7 @@ const handleRankingSubmission = (optionRankings) => {
     store.increaseRevenue(10000)
     store.increaseInvestorOpinion(10)
     store.increaseEmployees(150)
+    store.incrementLives()
   } else if (correct == 2) {
     store.increaseProfit(1000)
     store.increaseRevenue(5000)
