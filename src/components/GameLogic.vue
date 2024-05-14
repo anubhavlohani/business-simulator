@@ -61,6 +61,8 @@ const count = ref(0)
 const closedCases = ref([])
 
 const handleOptionSelection = (optionIndex) => {
+  showData.value = true
+
   // logic: best option gives ++ to profit and rev; 2nd best gives: +, remaining two -life
   if (optionIndex == 0) {
     store.increaseProfit(2000)
@@ -85,6 +87,8 @@ const handleOptionSelection = (optionIndex) => {
 }
 
 const handleMultiOptionSelection = (selectedOptions) => {
+  showData.value = true
+
   // selectedOptions represents index of options, not the text
 
   const bestOptionIndices = [2, 6, 9]
@@ -131,6 +135,8 @@ const handleMultiOptionSelection = (selectedOptions) => {
 }
 
 const handleRankingSubmission = (optionRankings) => {
+  showData.value = true
+
   //optionRankings is an array that contains options texts in the ranked order
 
   const correctRanking = [0, 1, 2] // option indices
