@@ -1,5 +1,5 @@
 <template>
-  <Line id="line-chart" :options="chartOptions" :data="chartData" />
+  <Line id="ftr-chart" :options="chartOptions" :data="chartData" />
 </template>
 
 <script setup>
@@ -19,7 +19,7 @@ import {
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 const chartData = {
-  labels: store.ftrLabels,
+  labels: store.labels,
   datasets: [
     {
       label: 'First Time Right',

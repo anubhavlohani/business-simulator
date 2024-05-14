@@ -19,13 +19,13 @@
       <!-- All charts -->
       <div class="flex flex-row flex-wrap items-center gap-y-8 p-8">
         <div class="size-1/2">
-          <LineChart />
+          <FtrChart />
         </div>
         <div class="size-1/2">
-          <BarChart />
+          <RevenueChart />
         </div>
         <div class="size-1/2">
-          <DoughnutChart />
+          <ProfitChart />
         </div>
       </div>
     </div>
@@ -33,9 +33,9 @@
 </template>
 
 <script setup>
-import BarChart from './BarChart.vue'
-import DoughnutChart from './DoughnutChart.vue'
-import LineChart from './LineChart.vue'
+import RevenueChart from './RevenueChart.vue'
+import FtrChart from './FtrChart.vue'
+import ProfitChart from './ProfitChart.vue'
 
 const emit = defineEmits(['toggleShowData'])
 const closeDataPanel = () => emit('toggleShowData')

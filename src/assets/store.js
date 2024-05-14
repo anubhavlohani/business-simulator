@@ -2,18 +2,24 @@ import { reactive } from 'vue'
 
 export const store = reactive({
   revenue: 0,
+  revenueData: [],
   increaseRevenue(val) {
     this.revenue += val
+    this.revenueData.push(this.revenue)
   },
   decreaseRevenue(val) {
     this.revenue -= val
+    this.revenueData.push(this.revenue)
   },
   profit: 0,
+  profitData: [],
   increaseProfit(val) {
     this.profit += val
+    this.profitData.push(this.profit)
   },
   decreaseProfit(val) {
     this.profit -= val
+    this.profitData.push(this.profit)
   },
   employees: 0,
   increaseEmployees(val) {
@@ -39,14 +45,14 @@ export const store = reactive({
     this.lives--
   },
   ftrData: [85],
-  ftrLabels: ['Jan'],
+  labels: ['Jan'],
   increaseFtr(val) {
     this.ftrData.push(this.ftrData[this.ftrData.length - 1] + val)
   },
-  decrementFtr(val) {
+  decreaseFtr(val) {
     this.ftrData.push(this.ftrData[this.ftrData.length - 1] - val)
   },
-  pushToFtrLabels(val) {
-    this.ftrLabels.push(val)
+  pushToLabels(val) {
+    this.labels.push(val)
   }
 })

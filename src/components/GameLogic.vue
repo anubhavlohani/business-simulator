@@ -77,12 +77,14 @@ const handleOptionSelection = (optionIndex) => {
     store.increaseEmployees(150)
     store.increaseFtr(3)
   } else {
+    store.decreaseProfit(1000)
+    store.decreaseRevenue(5000)
     store.decreaseEmpEngagement(20)
     store.decrementLives()
-    store.decrementFtr(8)
+    store.decreaseFtr(8)
   }
 
-  store.pushToFtrLabels('Feb')
+  store.pushToLabels('Feb')
   closedCases.value.push({
     description: cases[count.value].description,
     selectedOption: cases[count.value].options[optionIndex]
@@ -125,12 +127,14 @@ const handleMultiOptionSelection = (selectedOptions) => {
     store.increaseEmployees(150)
     store.increaseFtr(3)
   } else {
+    store.decreaseProfit(1000)
+    store.decreaseRevenue(5000)
     store.decreaseEmpEngagement(20)
     store.decrementLives()
-    store.decrementFtr(8)
+    store.decreaseFtr(8)
   }
 
-  store.pushToFtrLabels('Mar')
+  store.pushToLabels('Mar')
   let options = []
   for (let i = 0; i < selectedOptions.length; i++) {
     const option = cases[count.value].options[selectedOptions[i]]
@@ -176,12 +180,14 @@ const handleRankingSubmission = (optionRankings) => {
     store.increaseEmployees(150)
     store.increaseFtr(3)
   } else if (correct == 0) {
+    store.decreaseProfit(1000)
+    store.decreaseRevenue(5000)
     store.decreaseEmpEngagement(20)
     store.decrementLives()
     store.decreaseFtr(8)
   }
 
-  store.pushToFtrLabels('Apr')
+  store.pushToLabels('Apr')
   closedCases.value.push({
     description: cases[count.value].description,
     selectedOptions: optionRankings
